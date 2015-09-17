@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -27,6 +28,18 @@ public class LonelyTwitterActivity extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+	/**	ArrayList<Tweet> tweetList= new ArrayList<Tweet>();
+
+		Tweet t = new ImportantTweet("");
+
+		try {
+			t.setText("");
+		} catch (IOException e) {
+			// do something
+			throw new RuntimeException(e);
+		}
+	 **/
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
