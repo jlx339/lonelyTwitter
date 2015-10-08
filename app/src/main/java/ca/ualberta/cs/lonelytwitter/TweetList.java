@@ -5,7 +5,8 @@ import java.util.ArrayList;
 /**
  * Created by lixin1 on 9/30/15.
  */
-public class TweetList {
+public class TweetList implements  MyObserverable{
+    private ArrayList<MyObserver> myObservers = new ArrayList<MyObserver>();
     private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
     public void addTweet(Tweet tweet){
@@ -14,6 +15,8 @@ public class TweetList {
         } else {
             tweets.add(tweet);
         }
+
+        notifyOberservers();
     }
 
     public void removeTweet(Tweet tweet){
@@ -37,4 +40,14 @@ public class TweetList {
     }
 
 
+
+    public void addObserver(MyObserver observer) {
+        myObservers.add(observer);
+    }
+
+    public void notifyOberservers(){
+        for (MyObserver observer : myObservers){
+            observer.myNotify();
+        }
+    }
 }
